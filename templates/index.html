@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static '/css/main.css' %}" type="text/css">
+</head>
+<body>
+{% block content %}
+   <section id="section-bg" class=" bg-secondary" style="color: white;background-image: url('{% static 'image/andrew-neel-1-29wyvvLJA-unsplash.jpg'%}');
+     height: 650px;
+     padding: 100px 0 0 0; ">
+       <div class="container d-flex justify-content-center align-items-center" style="height:600px;">
+            <div class="section1-div" style="height:350px;display:flex;justify-content:center;align-items:center;opacity:0.5;">
+            <strong><p style="font-size:16px;" class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id,</p></strong>
+       </div>
+       </div>
+   </section>
+    <section class="mt-5">
+        <div style="display:flex;justify-content:center;margin-top:100px;" >
+             <h3 style="color:#000000 " >Brands Affiliated With Us</h3>
+        </div>
+        <hr style=" border:none;height:1px;color: #333;background-color:#333; ">
+        <div style="height:100px;"></div>
+        <diV class="d-flex justify-content-center align-items-center" style="display:flex;justify-content:center;align-items:center;">
+
+<!--comment these two-->
+         <div id='products' class="col-lg-9 mx-auto">
+			<div class="row mx-auto">
+<!--thesse two-->
+            {% for Brands in Brands %}
+<!--      for card       style=" box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);margin:auto;"-->
+             <div class="card mx-auto mb-3" id={{Brands.id}} style="width: 18rem; box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);>
+					<a href="/products"> <img style="height:250px" class="card-img-top" src="{{Brands.Brand_Image.url}}" alt="Card image cap"> </a>
+					<div class="card-body">
+					<a style="text-decoration:none;" href="/products/{{Brands.id}}"> <strong> <p style="color:#000000" class="card-title text-center text-dark">{{Brands.Brand}}</p> </strong> </a>
+                        <p  style="background-color:red;" class="badge badge-lg">{{Brands.day_left}}</p>
+					</div>
+                    <div class="card-footer p-0 no-gutters">
+                    </div>
+             </div>
+        {% endfor %}
+                </div>
+		</div>
+        </diV>
+    </section>
+
+{% endblock %}
+</body>
+</html>

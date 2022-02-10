@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+{% block content %}
+<section>
+<div class="container mt-5 col-7 border border-dark">
+    <div class="row  align-items-center">
+        <div class="col">
+              <table class="table">
+<tr>
+     <thead>
+     <th style="color:black;">
+        product image
+     </th>
+     <th>
+         Product name
+     </th>
+     <th>
+         Stock
+     </th>
+     <th>Days left</th>
+    </thead>
+</tr>
+{% for Products in Products %}
+    <tr>
+        <td><img style="height:100px" src="{{Products.Product_Image.url}}"></td>
+        <td><strong ><p class="mt-5">{{Products.Product_name}}</p></strong></td>
+        <tD> <strong> <p class="mt-5">{{Products.Stock}}</p></strong> </tD>
+        <td> <strong><p class="mt-5">{{Products.Day_left}}</p></strong></td>
+    </tr>
+{%endfor%}
+</table>
+        </div>
+    </div>
+</div>
+</section>
+
+
+{% endblock %}
+</body>
+</html>
